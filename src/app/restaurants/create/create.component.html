@@ -1,0 +1,50 @@
+<div class="container">
+    <legend>Create Item</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Name</label>
+        <input type="text" name="name" [(ngModel)] = "restaurantForm.name" class="form-control" id="txtName" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPhone" class="form-label">Phone</label>
+        <input type="text" name="phone" [(ngModel)] = "restaurantForm.phone" class="form-control" id="txtPhone" />
+      </div>
+      <div class="mb-3">
+        <label for="txtAdress" class="form-label">Adress</label>
+        <input type="text" name="adress" [(ngModel)] = "restaurantForm.adress" class="form-control" id="txtAdress" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPhoto" class="form-label">photo</label>
+        <input type="" name="photo" [(ngModel)] = "restaurantForm.photo" class="form-control" id="txtPhoto" />
+      </div>
+
+
+      <div class="row mb-3">
+        <label class="form-label" for="field_photo">Photo</label>
+        <div>
+         
+          
+         
+          <div class="text-center">
+            <input class="form-control" type="file" id="file_photo" data-cy="photo" 
+                    (change)="onChange($event)">
+          
+            <button (click)="onUpload()" 
+                class="btn btn-success">
+                Upload
+            </button>
+        </div>
+        
+        </div>
+      
+      </div>
+
+
+
+      <div class="mb-3">
+        <label for="txtPhotoContentType" class="form-label">photoContentType</label>
+        <input type="" name="photoContentType" [(ngModel)] = "restaurantForm.photoContentType" class="form-control" id="txtPhotoContentType" />
+      </div>
+      <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+    </form>
+  </div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row mt-2">
+    <div class="col col-md-4 offset-md-4">
+      <a class="btn btn-primary" routerLink="/restaurants/create">Create</a>
+    </div>
+  </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Adress</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restaurant of allRestaurants">
+            <td>
+                <a [routerLink]="['/restaurant', restaurant.id, 'view']">{{ restaurant.id }}</a>
+              </td>
+              <td>{{ restaurant.name }}</td>
+              <td>{{ restaurant.phone }}</td>
+              <td>{{ restaurant.adress }}</td>
+              <td>
+                <a *ngIf="restaurant.photo">
+                  <img
+                    [src]="'data:' + restaurant.photoContentType + ';base64,' + restaurant.photo"
+                    style="max-height: 30px"
+                    alt="restaurant image"
+                  />
+                </a>
+              </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
