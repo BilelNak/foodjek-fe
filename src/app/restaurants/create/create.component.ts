@@ -34,7 +34,7 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
   create(){
-    this.onUpload();
+    //this.onUpload();
     //this.restaurantForm.photo=this.formData.get()?.toString;
 
     //this.restaurantForm.photo = null;
@@ -58,7 +58,7 @@ export class CreateComponent implements OnInit {
       this.file = event.target.files[0];
   }*/
 
-  onChange(event: { target: { files: File[]; }; }) {
+  onChange(event: any ) {
     this.convertFile(event.target.files[0]).subscribe(base64 => {
       this.restaurantForm.photo = base64;
     });
@@ -68,7 +68,7 @@ export class CreateComponent implements OnInit {
     const result = new ReplaySubject<string>(1);
     const reader = new FileReader();
     reader.readAsBinaryString(file);
-    reader.onload = (event) => result.next(btoa(event.target.result.toString()));
+    reader.onload = (event) => result.next(btoa(event.target!.result!.toString()));
     return result;
   }
 
@@ -80,7 +80,7 @@ export class CreateComponent implements OnInit {
 
       reader.onload = () => {
 
-        sub.next(reader.result.toString());
+        sub.next(reader.result!.toString());
         sub.complete();
 
       };
