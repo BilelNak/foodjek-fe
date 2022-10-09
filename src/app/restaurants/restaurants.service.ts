@@ -11,7 +11,7 @@ export class RestaurantsService {
 
   private baseUrl = environment.host;
 
-  private auth_token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTY2NTMyNDg4OH0.FhYwAbEZ1PFhv8FXjiYlzpAhpau8QE2AU6QHMmgFFKNbWLmCLOs2zwcG7aJ3OVYceH5eDH5XClgSur6Em9M28A";                  
+  private auth_token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTY2NTQxMjE4NX0.KYojHRsC3MusEWCRPDYvVxCi93vCZ68hxrmSqJBTqLF-oDVjsudR1V-jdO_ly5L3j7MgFE7QIdHYz2YLZQj_iw";                  
 
   headers!: HttpHeaders;
   constructor(private http: HttpClient) { 
@@ -22,6 +22,7 @@ export class RestaurantsService {
     return this.http.get<Restaurant[]>(this.baseUrl+"/restaurantdb/api/restaurants", { headers: this.headers });
   }
   create(payload: Restaurant) {
-    return this.http.post<Restaurant>('http://localhost:8080/api/restaurants', payload,{ headers: this.headers });
+    console.log("into services " + payload.name);
+    return this.http.post<Restaurant>(this.baseUrl+"/restaurantdb/api/restaurants", payload,{ headers: this.headers });
   }
 }

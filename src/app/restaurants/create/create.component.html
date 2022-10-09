@@ -13,10 +13,6 @@
         <label for="txtAdress" class="form-label">Adress</label>
         <input type="text" name="adress" [(ngModel)] = "restaurantForm.adress" class="form-control" id="txtAdress" />
       </div>
-      <div class="mb-3">
-        <label for="txtPhoto" class="form-label">photo</label>
-        <input type="" name="photo" [(ngModel)] = "restaurantForm.photo" class="form-control" id="txtPhoto" />
-      </div>
 
 
       <div class="row mb-3">
@@ -25,26 +21,15 @@
          
           
          
-          <div class="text-center">
-            <input class="form-control" type="file" id="file_photo" data-cy="photo" 
+          <div class="text-center">          
+                    <input class="form-control" type="file" 
                     (change)="onChange($event)">
-          
-            <button (click)="onUpload()" 
-                class="btn btn-success">
-                Upload
-            </button>
         </div>
         
         </div>
       
       </div>
 
-
-
-      <div class="mb-3">
-        <label for="txtPhotoContentType" class="form-label">photoContentType</label>
-        <input type="" name="photoContentType" [(ngModel)] = "restaurantForm.photoContentType" class="form-control" id="txtPhotoContentType" />
-      </div>
       <button type="button" (click)="create()" class="btn btn-primary">Create</button>
     </form>
   </div>
