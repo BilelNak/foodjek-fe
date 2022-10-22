@@ -11,7 +11,7 @@ export class RestaurantsService {
 
   private baseUrl = environment.host;
 
-  private auth_token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTY2NTQxMjE4NX0.KYojHRsC3MusEWCRPDYvVxCi93vCZ68hxrmSqJBTqLF-oDVjsudR1V-jdO_ly5L3j7MgFE7QIdHYz2YLZQj_iw";                  
+  private auth_token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTY2NTkzMDUzMX0.gnzuJcALIOuZbFscpjP7Nls2nRbfeyYveO8_i-TG-iowuAqJbIhYR1RXHykdgjTBJa-aeIzJLQ8ri1ZgoV9zTw";                  
 
   headers!: HttpHeaders;
   constructor(private http: HttpClient) { 
